@@ -236,6 +236,8 @@ func (*StartGame) ID() uint32 {
 
 // Marshal ...
 func (pk *StartGame) Marshal(w *protocol.Writer) {
+	fmt.Println(pk);
+
 	w.Varint64(&pk.EntityUniqueID)
 	w.Varuint64(&pk.EntityRuntimeID)
 	w.Varint32(&pk.PlayerGameMode)
