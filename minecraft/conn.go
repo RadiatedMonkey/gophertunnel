@@ -324,6 +324,9 @@ func (conn *Conn) WritePacket(pk packet.Packet) error {
 		if conn.packetFunc != nil {
 			conn.packetFunc(*conn.hdr, buf.Bytes()[l:], conn.LocalAddr(), conn.RemoteAddr())
 		}
+
+		fmt.Println(buf.Bytes())
+
 		conn.bufferedSend = append(conn.bufferedSend, append([]byte(nil), buf.Bytes()...))
 	}
 	return nil
