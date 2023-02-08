@@ -1,6 +1,8 @@
 package packet
 
 import (
+	"fmt"
+
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/google/uuid"
 	"github.com/RadiatedMonkey/gophertunnel/minecraft/nbt"
