@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/golang/snappy"
 	"github.com/klauspost/compress/flate"
-	"github.com/sandertv/gophertunnel/internal"
+	"github.com/RadiatedMonkey/gophertunnel/internal"
 	"io"
 	"sync"
 )

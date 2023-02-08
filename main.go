@@ -3,8 +3,8 @@ package main
 import (
 	"errors"
 	"github.com/pelletier/go-toml"
-	"github.com/sandertv/gophertunnel/minecraft"
-	"github.com/sandertv/gophertunnel/minecraft/auth"
+	"github.com/RadiatedMonkey/gophertunnel/minecraft"
+	"github.com/RadiatedMonkey/gophertunnel/minecraft/auth"
 	"golang.org/x/oauth2"
 	"log"
 	"os"

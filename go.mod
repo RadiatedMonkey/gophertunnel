@@ -1,4 +1,4 @@
-module github.com/sandertv/gophertunnel
+module github.com/RadiatedMonkey/gophertunnel
 
 go 1.18
 
