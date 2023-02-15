@@ -2,6 +2,7 @@ package packet
 
 import (
 	"github.com/RadiatedMonkey/gophertunnel/minecraft/protocol"
+	"fmt"
 	"math"
 )
 
@@ -102,6 +103,8 @@ func (pk *AvailableCommands) Unmarshal(r *protocol.Reader) {
 	for i := uint32(0); i < count; i++ {
 		protocol.CommandData(r, &pk.Commands[i], enums, suffixes)
 	}
+
+	fmt.Println(pk)
 
 	// We first read all soft enums of the packet.
 	r.Varuint32(&count)

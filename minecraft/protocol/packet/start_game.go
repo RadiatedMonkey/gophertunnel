@@ -1,8 +1,6 @@
 package packet
 
 import (
-	"fmt"
-
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/google/uuid"
 	"github.com/RadiatedMonkey/gophertunnel/minecraft/nbt"
@@ -238,8 +236,6 @@ func (*StartGame) ID() uint32 {
 
 // Marshal ...
 func (pk *StartGame) Marshal(w *protocol.Writer) {
-	fmt.Println(pk);
-
 	w.Varint64(&pk.EntityUniqueID)
 	w.Varuint64(&pk.EntityRuntimeID)
 	w.Varint32(&pk.PlayerGameMode)
@@ -336,6 +332,7 @@ func (pk *StartGame) Unmarshal(r *protocol.Reader) {
 	r.String(&pk.EducationProductID)
 	r.Float32(&pk.RainLevel)
 	r.Float32(&pk.LightningLevel)
+
 	r.Bool(&pk.ConfirmedPlatformLockedContent)
 	r.Bool(&pk.MultiPlayerGame)
 	r.Bool(&pk.LANBroadcastEnabled)
@@ -366,6 +363,7 @@ func (pk *StartGame) Unmarshal(r *protocol.Reader) {
 	r.Bool(&pk.NewNether)
 	protocol.EducationResourceURI(r, &pk.EducationSharedResourceURI)
 	protocol.OptionalFunc(r, &pk.ForceExperimentalGameplay, r.Bool)
+
 	r.Uint8(&pk.ChatRestrictionLevel)
 	r.Bool(&pk.DisablePlayerInteractions)
 	r.String(&pk.LevelID)
@@ -375,6 +373,7 @@ func (pk *StartGame) Unmarshal(r *protocol.Reader) {
 	protocol.PlayerMoveSettings(r, &pk.PlayerMovementSettings)
 	r.Int64(&pk.Time)
 	r.Varint32(&pk.EnchantmentSeed)
+
 	protocol.Slice(r, &pk.Blocks)
 	protocol.Slice(r, &pk.Items)
 	r.String(&pk.MultiPlayerCorrelationID)

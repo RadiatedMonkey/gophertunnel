@@ -73,6 +73,8 @@ type Skin struct {
 
 // Marshal encodes/decodes a Skin.
 func (x *Skin) Marshal(r IO) {
+	fmt.Println(x.FullID)
+
 	r.String(&x.SkinID)
 	r.String(&x.PlayFabID)
 	r.ByteSlice(&x.SkinResourcePatch)
